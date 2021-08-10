@@ -5,10 +5,10 @@ This is a simple App uses Web API to display current temperatue at a specific co
 </p>
 
 <p>
-The App display three information:
-1- The date
-2- current Temperature at specific country based on zip code which user will enter.
-3- The user feelings, and this information will get from user too. 
+The App display three information: <br>
+1- The date <br>
+2- current Temperature at specific country based on zip code which user will enter. <br>
+3- The user feelings, and this information will get from user too. <br>
 </p>
 
 <p>
