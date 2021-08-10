@@ -8,7 +8,7 @@ let newDate = d.getMonth() + 1 + "." + d.getDate() + "." + d.getFullYear();
 
 // get data from openweathermap API
 let getWeatherData = async (baseUrl, zipCode, appId) => {
-  const url = baseUrl + zipCode + "&appid=" + appId;
+  const url = baseUrl + zipCode + "&appid=" + appId + "&units=metric";
   //
   const getReq = await fetch(url);
 
@@ -46,6 +46,10 @@ document
     const zipCode = document.getElementById("zip");
     const userResponse = document.getElementById("feelings");
 
+    if (zipCode.value == "") {
+      alert("Please Enter Zip Code");
+    }
+
     await getWeatherData(baseURL, zipCode.value, appId).then(async (data) => {
       await postWeatherData("/sava-data", {
         temperature: data.main.temp,
@@ -57,7 +61,7 @@ document
     });
   });
 
-// retrieve data from our app and update UI 
+// retrieve data from our app and update UI
 updateUI = async () => {
   //
   const getAllData = await fetch("/allData");
@@ -75,7 +79,8 @@ updateUI = async () => {
       "<span style='color:white;'>Date:</span> " + allDataResponse.date;
     tempDisplay.innerHTML =
       "<span style='color:white;'>Temperature:</span> " +
-      allDataResponse.temperature;
+      allDataResponse.temperature +
+      "<span style='margin-left:8px;'>   ْC</span>";
     contentDisplay.innerHTML =
       "<span style='color:white;'>Feelings:</span> " +
       allDataResponse.userResponse;
