@@ -32,9 +32,15 @@ app.get("/get-all-data", function (req, res) {
 });
 
 // post route
-app.post("sava-data", function (req, res) {
-  console.log(req.body);
+app.post("/sava-data", function (req, res) {
   projectData.temperature = req.body.temperature;
   projectData.date = req.body.date;
   projectData.userResponse = req.body.userResponse;
+
+  res.send(projectData);
+});
+
+//all data route
+app.get("/allData", (req, res) => {
+  res.send(projectData);
 });
