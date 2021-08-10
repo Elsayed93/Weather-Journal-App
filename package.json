@@ -1,0 +1,24 @@
+{
+  "name": "weather-journal-app",
+  "version": "1.0.0",
+  "description": "an asynchronous web app that uses Web API and user data to dynamically update the UI for a Weather-Journal App.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elsayed93/Weather-Journal-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elsayed93/Weather-Journal-App/issues"
+  },
+  "homepage": "https://github.com/Elsayed93/Weather-Journal-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.3"
+  }
+}
