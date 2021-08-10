@@ -48,17 +48,17 @@ document
 
     if (zipCode.value == "") {
       alert("Please Enter Zip Code");
-    }
-
-    await getWeatherData(baseURL, zipCode.value, appId).then(async (data) => {
-      await postWeatherData("/sava-data", {
-        temperature: data.main.temp,
-        date: newDate,
-        userResponse: userResponse.value,
-      }).then((data) => {
-        updateUI();
+    } else {
+      await getWeatherData(baseURL, zipCode.value, appId).then(async (data) => {
+        await postWeatherData("/sava-data", {
+          temperature: data.main.temp,
+          date: newDate,
+          userResponse: userResponse.value,
+        }).then((data) => {
+          updateUI();
+        });
       });
-    });
+    }
   });
 
 // retrieve data from our app and update UI
